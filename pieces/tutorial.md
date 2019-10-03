@@ -1,4 +1,4 @@
-# Nextflow Tutorial
+# Introduction
 ## Installing Nextflow
 ```console
 guhjo98p@ga-vl01 ~> wget -qO- https://get.nextflow.io | bash
@@ -122,3 +122,178 @@ process MultiQC {
 }
 ```
 
+# Assembling these genomes
+## Same starting channel
+```Nextflow
+Channel.fromFilePairs("/scale_wlg_nobackup/filesets/nobackup/nesi02646/nextflow-tutorial/nf-tutorial/sequences/*_{1,2}.fastq.gz")
+        .set { sequence_files_ch }
+```
+## Process the reads
+```Nextflow
+process AdapterRemovalV2 {
+    conda 'bioconda::adapterremoval'
+    cpus 6
+    publishDir './processed/', mode: 'copy'
+    input: 
+        set strain, file(reads) from sequence_pairs_ch
+
+    output:
+        set val(strain), file("${strain}.*") into processed_reads_ch
+        file("${strain}.settings") into qc_report_ch
+
+    """
+    AdapterRemoval \
+        --file1 ${reads[0]} \
+        --file2 ${reads[1]} \
+        --threads 6 \
+        --basename ${strain} \
+        --gzip \
+        --collapse
+
+    """
+}
+```
+
+## MultiQC the processed reads
+```Nextflow
+process MultiQC {
+    conda 'bioconda::multiqc'
+    publishDir './Processing_MultiQC_output'
+
+    input:
+        file(settings_out) from qc_report_ch.collect()
+
+    output:
+        file("multiqc_report.html")
+        file("multiqc_data")
+
+    """
+    multiqc .
+    """
+}
+```
+
+## Assemble with Megahit
+```Nextflow
+process runMegahitAssembler {
+    conda 'bioconda::megahit'
+    cpus 6
+    maxForks 2
+    publishDir "./Assemblies", mode: 'copy'
+    input: 
+        set sequence_id, file(files) from processed_reads_ch
+    
+    output:
+        file("${sequence_id}.contigs.fa")
+
+    // collapsed, pair1, pair2, singletons
+    """
+
+    zcat *collapsed*gz > merged.fq
+    mv ${sequence_id}.pair1.truncated.gz pair1.fq.gz
+    mv ${sequence_id}.pair2.truncated.gz pair2.fq.gz
+    mv ${sequence_id}.singleton.truncated.gz singles.fq.gz
+    
+    megahit -1 pair1.fq.gz -2 pair2.fq.gz \
+        -r merged.fq,singles.fq.gz \
+        -t 6 \
+        -o output \
+        --out-prefix ${sequence_id}
+
+    mv output/${sequence_id}.contigs.fa ${sequence_id}.contigs.fa
+    """
+}
+```
+
+## Entire script
+```Nextflow
+Channel.fromFilePairs("/scale_wlg_nobackup/filesets/nobackup/nesi02646/nextflow-tutorial/nf-tutorial/sequences/*_{1,2}.fastq.gz")
+        .set { sequence_files_ch }
+
+process AdapterRemovalV2 {
+    conda 'bioconda::adapterremoval'
+    cpus 6
+    publishDir './processed/', mode: 'copy'
+    input: 
+        set strain, file(reads) from sequence_pairs_ch
+
+    output:
+        set val(strain), file("${strain}.*") into processed_reads_ch
+        file("${strain}.settings") into qc_report_ch
+
+    """
+    AdapterRemoval \
+        --file1 ${reads[0]} \
+        --file2 ${reads[1]} \
+        --threads 6 \
+        --basename ${strain} \
+        --gzip \
+        --collapse
+
+    """
+}
+
+process MultiQC {
+    conda 'bioconda::multiqc'
+    publishDir './Processing_MultiQC_output'
+
+    input:
+        file(settings_out) from qc_report_ch.collect()
+
+    output:
+        file("multiqc_report.html")
+        file("multiqc_data")
+
+    """
+    multiqc .
+    """
+}
+
+process runMegahitAssembler {
+    conda 'bioconda::megahit'
+    cpus 6
+    maxForks 2
+    publishDir "./Assemblies", mode: 'copy'
+    input: 
+        set sequence_id, file(files) from processed_reads_ch
+    
+    output:
+        file("${sequence_id}.contigs.fa")
+
+    """
+
+    zcat *collapsed*gz > merged.fq
+    mv ${sequence_id}.pair1.truncated.gz pair1.fq.gz
+    mv ${sequence_id}.pair2.truncated.gz pair2.fq.gz
+    mv ${sequence_id}.singleton.truncated.gz singles.fq.gz
+    
+    megahit -1 pair1.fq.gz -2 pair2.fq.gz \
+        -r merged.fq,singles.fq.gz \
+        -t 6 \
+        -o output \
+        --out-prefix ${sequence_id}
+
+    mv output/${sequence_id}.contigs.fa ${sequence_id}.contigs.fa
+    """
+}
+```
+
+```Console
+guhjo98p@ga-vl01 /n/n/n/n/n/scripts> nextflow 1_processing_megahit.nf -with-report -with-trace                                                    (base)
+N E X T F L O W  ~  version 19.07.0
+Launching `1_processing_megahit.nf` [golden_spence] - revision: 989e7a108e
+[-        ] process > AdapterRemovalV2    -
+executor >  local (4)
+executor >  local (4)
+[3b/d59fb1] process > AdapterRemovalV2 (2) [  0%] 0 of 4
+executor >  local (4)
+[2a/b88dad] process > AdapterRemovalV2 (1) [ 25%] 1 of 4
+executor >  local (9)
+[77/6aa0b6] process > AdapterRemovalV2 (3)    [100%] 4 of 4 ✔
+[8c/1c60e6] process > MultiQC                 [100%] 1 of 1 ✔
+[02/70022d] process > runMegahitAssembler (4) [100%] 4 of 4 ✔
+Completed at: 03-Oct-2019 22:39:43
+Duration    : 14m 42s
+CPU hours   : 3.2
+Succeeded   : 9
+```
