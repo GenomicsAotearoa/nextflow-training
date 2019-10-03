@@ -1,0 +1,6 @@
+*.fastq
+*.fq
+*.gz
+work/*
+*zip
+*txt
