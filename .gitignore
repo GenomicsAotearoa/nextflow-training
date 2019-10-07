@@ -6,3 +6,5 @@ work/*
 *txt
 *.html
 */work/*
+.nextflow/*
+*/.nextflow/*
