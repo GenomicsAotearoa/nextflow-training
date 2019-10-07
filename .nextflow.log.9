@@ -1,0 +1,108 @@
+Oct-03 12:14:49.243 [main] DEBUG nextflow.cli.Launcher - $> nextflow prepare_training.nf
+Oct-03 12:14:49.329 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.09.0-edge
+Oct-03 12:14:49.338 [main] INFO  nextflow.cli.CmdRun - Launching `prepare_training.nf` [reverent_baekeland] - revision: a28771744e
+Oct-03 12:14:49.405 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,route,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Oct-03 12:14:49.416 [main] DEBUG nextflow.Session - Session uuid: 3c712dd8-02e8-4bcd-85b0-f7e09cdd1e7d
+Oct-03 12:14:49.417 [main] DEBUG nextflow.Session - Run name: reverent_baekeland
+Oct-03 12:14:49.418 [main] DEBUG nextflow.Session - Executor pool size: 64
+Oct-03 12:14:49.428 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.09.0-edge build 5167
+  Created: 16-09-2019 21:15 UTC (17-09-2019 09:15 NZDT)
+  System: Linux 5.0.0-29-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 1.8.0_222-8u222-b10-1ubuntu1~19.04.1-b10
+  Encoding: UTF-8 (UTF-8)
+  Process: 91696@josephguhlin [127.0.1.1]
+  CPUs: 64 - Mem: 125.8 GB (84.4 GB) - Swap: 976 MB (976 MB)
+Oct-03 12:14:49.480 [main] DEBUG nextflow.Session - Work-dir: /home/josephguhlin/work/nextflow-training/work [ext2/ext3]
+Oct-03 12:14:49.480 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/josephguhlin/work/nextflow-training/bin
+Oct-03 12:14:49.495 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Oct-03 12:14:49.497 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct-03 12:14:49.599 [main] DEBUG nextflow.Session - Session start invoked
+Oct-03 12:14:49.920 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-03 12:14:50.020 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-03 12:14:50.021 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-03 12:14:50.023 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct-03 12:14:50.026 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.8 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Oct-03 12:14:50.154 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > downloadAndRename -- maxForks: 64
+Oct-03 12:14:50.174 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Oct-03 12:14:50.175 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct-03 12:14:50.175 [main] DEBUG nextflow.Session - Session await
+Oct-03 12:14:50.300 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.304 [Task submitter] INFO  nextflow.Session - [e6/bc4fad] Submitted process > downloadAndRename (11)
+Oct-03 12:14:50.310 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.310 [Task submitter] INFO  nextflow.Session - [13/5f3d99] Submitted process > downloadAndRename (10)
+Oct-03 12:14:50.313 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.313 [Task submitter] INFO  nextflow.Session - [e8/4289be] Submitted process > downloadAndRename (2)
+Oct-03 12:14:50.316 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.316 [Task submitter] INFO  nextflow.Session - [6c/97c6a5] Submitted process > downloadAndRename (5)
+Oct-03 12:14:50.318 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.319 [Task submitter] INFO  nextflow.Session - [6b/40ac99] Submitted process > downloadAndRename (7)
+Oct-03 12:14:50.321 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.321 [Task submitter] INFO  nextflow.Session - [89/b71ed8] Submitted process > downloadAndRename (4)
+Oct-03 12:14:50.324 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.324 [Task submitter] INFO  nextflow.Session - [8f/54e189] Submitted process > downloadAndRename (1)
+Oct-03 12:14:50.326 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.327 [Task submitter] INFO  nextflow.Session - [b9/c575fa] Submitted process > downloadAndRename (6)
+Oct-03 12:14:50.329 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.330 [Task submitter] INFO  nextflow.Session - [51/3c3481] Submitted process > downloadAndRename (9)
+Oct-03 12:14:50.330 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: downloadAndRename (11); status: COMPLETED; exit: 1; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/e6/bc4fadf2d01ad3e1b78abb3d33bf81]
+Oct-03 12:14:50.332 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.332 [Task submitter] INFO  nextflow.Session - [db/0e9770] Submitted process > downloadAndRename (8)
+Oct-03 12:14:50.335 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:14:50.335 [Task submitter] INFO  nextflow.Session - [9e/99c8f5] Submitted process > downloadAndRename (3)
+Oct-03 12:14:50.352 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'downloadAndRename (11)'
+
+Caused by:
+  Process `downloadAndRename (11)` terminated with an error exit status (1)
+
+Command executed:
+
+  echo ${name}
+  echo ${SRR}
+  
+  fasterq-dump ${SRR}
+  mv ${SRR}_1.fastq ${name}_1.fastq
+  mv ${SRR}_2.fastq ${name}_2.fastq
+  pigz ${name}_1.fastq
+  pigz ${name}_2.fastq
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  .command.sh: line 2: name: unbound variable
+
+Work dir:
+  /home/josephguhlin/work/nextflow-training/work/e6/bc4fadf2d01ad3e1b78abb3d33bf81
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Oct-03 12:14:50.358 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `downloadAndRename (11)` terminated with an error exit status (1)
+Oct-03 12:14:50.373 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct-03 12:14:50.374 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-03 12:14:50.374 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: downloadAndRename (10); status: COMPLETED; exit: 1; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/13/5f3d99a89a5604d136dbaf6f1f4761]
+Oct-03 12:14:50.376 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: downloadAndRename (2); status: COMPLETED; exit: 1; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/e8/4289be8e0440a882b78fd847ae9764]
+Oct-03 12:14:50.377 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: downloadAndRename (5); status: COMPLETED; exit: 1; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/6c/97c6a576659522a2000e6e8c2a919f]
+Oct-03 12:14:50.379 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: downloadAndRename (7); status: COMPLETED; exit: 1; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/6b/40ac990b00b940307b735521b3ca6d]
+Oct-03 12:14:50.380 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: downloadAndRename (4); status: COMPLETED; exit: 1; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/89/b71ed8051d8388ff7023cc75064dcb]
+Oct-03 12:14:50.382 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (5)
+Oct-03 12:14:50.388 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill downloadAndRename (1) -- command: kill -TERM 91952; exit: 1 
+ bash: line 0: kill: (91952) - No such process
+
+Oct-03 12:14:50.390 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill downloadAndRename (6) -- command: kill -TERM 91964; exit: 1 
+ bash: line 0: kill: (91964) - No such process
+
+Oct-03 12:14:50.393 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill downloadAndRename (9) -- command: kill -TERM 91979; exit: 1 
+ bash: line 0: kill: (91979) - No such process
+
+Oct-03 12:14:50.395 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill downloadAndRename (8) -- command: kill -TERM 91990; exit: 1 
+ bash: line 0: kill: (91990) - No such process
+
+Oct-03 12:14:50.397 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill downloadAndRename (3) -- command: kill -TERM 92001; exit: 1 
+ bash: line 0: kill: (92001) - No such process
+
+Oct-03 12:14:50.398 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=11; ignoredCount=0; cachedCount=0; succeedDuration=0ms; failedDuration=6ms; cachedDuration=0ms]
+Oct-03 12:14:50.566 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct-03 12:14:50.576 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,48 @@
+Oct.-03 20:17:00.018 [main] DEBUG nextflow.cli.Launcher - $> nextflow test.nf
+Oct.-03 20:17:00.115 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.09.0-edge
+Oct.-03 20:17:00.122 [main] INFO  nextflow.cli.CmdRun - Launching `test.nf` [deadly_curie] - revision: 3874beedb8
+Oct.-03 20:17:00.200 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,route,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Oct.-03 20:17:00.209 [main] DEBUG nextflow.Session - Session uuid: 48141aac-31f1-4417-ad03-ff8c9dbb0e60
+Oct.-03 20:17:00.210 [main] DEBUG nextflow.Session - Run name: deadly_curie
+Oct.-03 20:17:00.211 [main] DEBUG nextflow.Session - Executor pool size: 64
+Oct.-03 20:17:00.234 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.09.0-edge build 5167
+  Created: 16-09-2019 21:15 UTC (17-09-2019 09:15 NZDT)
+  System: Linux 5.0.0-29-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.1-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 102918@josephguhlin [127.0.1.1]
+  CPUs: 64 - Mem: 125.8 GB (75.6 GB) - Swap: 976 MB (956 MB)
+Oct.-03 20:17:00.252 [main] DEBUG nextflow.Session - Work-dir: /home/josephguhlin/work/nextflow-training/scripts/work [ext2/ext3]
+Oct.-03 20:17:00.252 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/josephguhlin/work/nextflow-training/scripts/bin
+Oct.-03 20:17:00.263 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Oct.-03 20:17:00.265 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct.-03 20:17:00.384 [main] DEBUG nextflow.Session - Session start invoked
+Oct.-03 20:17:00.599 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct.-03 20:17:00.635 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ../sequences/; pattern: *_{1,2}.fastq.gz; options: [:]
+Oct.-03 20:17:00.759 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 20:17:00.759 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 20:17:00.762 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct.-03 20:17:00.765 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.8 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Oct.-03 20:17:00.795 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastQC -- maxForks: 64
+Oct.-03 20:17:00.808 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Oct.-03 20:17:00.809 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct.-03 20:17:00.809 [main] DEBUG nextflow.Session - Session await
+Oct.-03 20:17:00.900 [Actor Thread 7] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::fastqc; path=/home/josephguhlin/work/nextflow-training/scripts/work/conda/env-2472c99747f9fb1a6eef40cd9db2844a
+Oct.-03 20:17:00.961 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 20:17:00.964 [Task submitter] INFO  nextflow.Session - [45/db567f] Submitted process > fastQC (3)
+Oct.-03 20:17:00.971 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 20:17:00.971 [Task submitter] INFO  nextflow.Session - [3d/e42b18] Submitted process > fastQC (2)
+Oct.-03 20:17:00.976 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 20:17:00.977 [Task submitter] INFO  nextflow.Session - [5f/c79af8] Submitted process > fastQC (4)
+Oct.-03 20:17:00.981 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 20:17:00.981 [Task submitter] INFO  nextflow.Session - [bd/a3e0f4] Submitted process > fastQC (1)
+Oct.-03 20:17:06.343 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: fastQC (1); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/bd/a3e0f470f34560cc446a9c1b936480]
+Oct.-03 20:17:19.392 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: fastQC (2); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/3d/e42b1837bd451886b0f016c4b90a5a]
+Oct.-03 20:17:25.354 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: fastQC (3); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/45/db567f6c36679a018ca94e6b5116a4]
+Oct.-03 20:17:32.333 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: fastQC (4); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/5f/c79af836c27d082627d9d0708ce202]
+Oct.-03 20:17:32.337 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct.-03 20:17:32.432 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct.-03 20:17:32.437 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=4; failedCount=0; ignoredCount=0; cachedCount=0; succeedDuration=1m 19s; failedDuration=0ms; cachedDuration=0ms]
+Oct.-03 20:17:32.654 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct.-03 20:17:32.669 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

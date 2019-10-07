@@ -1,0 +1,209 @@
+Oct.-03 16:27:35.827 [main] DEBUG nextflow.cli.Launcher - $> nextflow 1_processing.nf -with-report -with-trace
+Oct.-03 16:27:35.912 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.09.0-edge
+Oct.-03 16:27:35.919 [main] INFO  nextflow.cli.CmdRun - Launching `1_processing.nf` [furious_wilson] - revision: 366243eebd
+Oct.-03 16:27:35.998 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,route,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Oct.-03 16:27:36.008 [main] DEBUG nextflow.Session - Session uuid: 6b0e542c-097e-4058-ba34-0df72adef87a
+Oct.-03 16:27:36.008 [main] DEBUG nextflow.Session - Run name: furious_wilson
+Oct.-03 16:27:36.010 [main] DEBUG nextflow.Session - Executor pool size: 64
+Oct.-03 16:27:36.032 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.09.0-edge build 5167
+  Created: 16-09-2019 21:15 UTC (17-09-2019 09:15 NZDT)
+  System: Linux 5.0.0-29-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.1-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 78270@josephguhlin [127.0.1.1]
+  CPUs: 64 - Mem: 125.8 GB (15.3 GB) - Swap: 976 MB (976 MB)
+Oct.-03 16:27:36.051 [main] DEBUG nextflow.Session - Work-dir: /home/josephguhlin/work/nextflow-training/scripts/work [ext2/ext3]
+Oct.-03 16:27:36.051 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/josephguhlin/work/nextflow-training/scripts/bin
+Oct.-03 16:27:36.062 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Oct.-03 16:27:36.063 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct.-03 16:27:36.199 [main] DEBUG nextflow.Session - Session start invoked
+Oct.-03 16:27:36.203 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /home/josephguhlin/work/nextflow-training/scripts/trace.txt
+Oct.-03 16:27:36.459 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct.-03 16:27:36.496 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ../sequences/; pattern: *_{1,2}.fastq.gz; options: [:]
+Oct.-03 16:27:36.628 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 16:27:36.629 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 16:27:36.631 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct.-03 16:27:36.634 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.8 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Oct.-03 16:27:36.662 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > AdapterRemovalV2 -- maxForks: 64
+Oct.-03 16:27:36.691 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 16:27:36.691 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 16:27:36.693 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > MultiQC -- maxForks: 64
+Oct.-03 16:27:36.697 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 16:27:36.697 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 16:27:36.698 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > runSpadesAssembler -- maxForks: 2
+Oct.-03 16:27:36.702 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Oct.-03 16:27:36.703 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct.-03 16:27:36.703 [main] DEBUG nextflow.Session - Session await
+Oct.-03 16:27:36.788 [Actor Thread 13] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::adapterremoval; path=/home/josephguhlin/work/nextflow-training/scripts/work/conda/env-9feb85e91f373ff236a27fa09856e470
+Oct.-03 16:27:36.859 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.863 [Task submitter] INFO  nextflow.Session - [6f/25306c] Submitted process > AdapterRemovalV2 (3)
+Oct.-03 16:27:36.872 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.872 [Task submitter] INFO  nextflow.Session - [23/528f3e] Submitted process > AdapterRemovalV2 (4)
+Oct.-03 16:27:36.877 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.877 [Task submitter] INFO  nextflow.Session - [f3/e848ab] Submitted process > AdapterRemovalV2 (5)
+Oct.-03 16:27:36.881 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.882 [Task submitter] INFO  nextflow.Session - [fe/46d552] Submitted process > AdapterRemovalV2 (2)
+Oct.-03 16:27:36.885 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.886 [Task submitter] INFO  nextflow.Session - [ec/05eff7] Submitted process > AdapterRemovalV2 (1)
+Oct.-03 16:27:36.892 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.893 [Task submitter] INFO  nextflow.Session - [69/082392] Submitted process > AdapterRemovalV2 (8)
+Oct.-03 16:27:36.898 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.898 [Task submitter] INFO  nextflow.Session - [a1/cbb5e1] Submitted process > AdapterRemovalV2 (9)
+Oct.-03 16:27:36.903 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.903 [Task submitter] INFO  nextflow.Session - [87/b7ca91] Submitted process > AdapterRemovalV2 (10)
+Oct.-03 16:27:36.907 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.908 [Task submitter] INFO  nextflow.Session - [ed/213db5] Submitted process > AdapterRemovalV2 (7)
+Oct.-03 16:27:36.911 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:36.912 [Task submitter] INFO  nextflow.Session - [bb/d49877] Submitted process > AdapterRemovalV2 (6)
+Oct.-03 16:27:48.268 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: AdapterRemovalV2 (3); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/6f/25306ced79d62f5c8d625aa300738d]
+Oct.-03 16:27:48.283 [Actor Thread 3] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::spades; path=/home/josephguhlin/work/nextflow-training/scripts/work/conda/env-ec02e25dea9af3b622a9ee93f2fe9829
+Oct.-03 16:27:48.288 [Task monitor] DEBUG n.util.BlockingThreadExecutorFactory - Thread pool name=FileTransfer; maxThreads=192; maxQueueSize=576; keepAlive=1m
+Oct.-03 16:27:48.291 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:27:48.292 [Task submitter] INFO  nextflow.Session - [84/a977ae] Submitted process > runSpadesAssembler (1)
+Oct.-03 16:28:58.574 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: AdapterRemovalV2 (4); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/23/528f3e1b6ac4d6a2b1b1b2909118ab]
+Oct.-03 16:28:58.586 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:28:58.587 [Task submitter] INFO  nextflow.Session - [85/8a2c81] Submitted process > runSpadesAssembler (2)
+Oct.-03 16:29:07.013 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: AdapterRemovalV2 (5); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/f3/e848ab6901d08738dcc30e6579fd6e]
+Oct.-03 16:29:51.316 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: AdapterRemovalV2 (1); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/ec/05eff72a414d36c9eb113b837d562b]
+Oct.-03 16:29:57.542 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: AdapterRemovalV2 (8); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/69/0823921a21b6d33311fadb758168d3]
+Oct.-03 16:29:57.925 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: AdapterRemovalV2 (7); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/ed/213db5f622f5ca133bd1fb38110ab4]
+Oct.-03 16:30:02.987 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: AdapterRemovalV2 (6); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/bb/d4987726d07fa0278b9a7ba7a6b837]
+Oct.-03 16:30:06.992 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: AdapterRemovalV2 (2); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/fe/46d552dee7e3b6d9cc62a73f06a1b4]
+Oct.-03 16:30:17.069 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: AdapterRemovalV2 (9); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/a1/cbb5e109758c8d4e733fff34af936d]
+Oct.-03 16:30:50.026 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: runSpadesAssembler (1); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/84/a977aea6f6dcf12ecebc209d8863d0]
+Oct.-03 16:30:50.040 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:30:50.041 [Task submitter] INFO  nextflow.Session - [1d/6e8747] Submitted process > runSpadesAssembler (3)
+Oct.-03 16:32:16.679 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: AdapterRemovalV2 (10); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/87/b7ca91a84ad652f9546fb47497b1c0]
+Oct.-03 16:32:16.694 [Actor Thread 31] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::multiqc; path=/home/josephguhlin/work/nextflow-training/scripts/work/conda/env-3abca7a24ea4d6c708bf4c6cea6413d2
+Oct.-03 16:32:16.701 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:32:16.707 [Task submitter] INFO  nextflow.Session - [83/c5f516] Submitted process > MultiQC
+Oct.-03 16:32:20.819 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: MultiQC; status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/83/c5f5160947a346dbfc1e22e8cbda99]
+Oct.-03 16:32:36.759 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 12; name: runSpadesAssembler (2); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/85/8a2c8117c51753141fddf6ba8ddbfa]
+~> TaskHandler[id: 13; name: runSpadesAssembler (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/1d/6e874715500430b8fadb364e1c42b2]
+Oct.-03 16:37:36.815 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 12; name: runSpadesAssembler (2); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/85/8a2c8117c51753141fddf6ba8ddbfa]
+~> TaskHandler[id: 13; name: runSpadesAssembler (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/1d/6e874715500430b8fadb364e1c42b2]
+Oct.-03 16:42:36.876 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 12; name: runSpadesAssembler (2); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/85/8a2c8117c51753141fddf6ba8ddbfa]
+~> TaskHandler[id: 13; name: runSpadesAssembler (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/1d/6e874715500430b8fadb364e1c42b2]
+Oct.-03 16:47:36.945 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 12; name: runSpadesAssembler (2); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/85/8a2c8117c51753141fddf6ba8ddbfa]
+~> TaskHandler[id: 13; name: runSpadesAssembler (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/1d/6e874715500430b8fadb364e1c42b2]
+Oct.-03 16:48:23.304 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: runSpadesAssembler (2); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/85/8a2c8117c51753141fddf6ba8ddbfa]
+Oct.-03 16:48:23.318 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:48:23.318 [Task submitter] INFO  nextflow.Session - [4a/b08cc4] Submitted process > runSpadesAssembler (4)
+Oct.-03 16:52:37.039 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 13; name: runSpadesAssembler (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/1d/6e874715500430b8fadb364e1c42b2]
+~> TaskHandler[id: 15; name: runSpadesAssembler (4); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4a/b08cc40c27bb0e99e056a2d9188492]
+Oct.-03 16:56:34.266 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: runSpadesAssembler (3); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/1d/6e874715500430b8fadb364e1c42b2]
+Oct.-03 16:56:34.291 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 16:56:34.292 [Task submitter] INFO  nextflow.Session - [32/934e6c] Submitted process > runSpadesAssembler (5)
+Oct.-03 16:57:37.123 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 15; name: runSpadesAssembler (4); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4a/b08cc40c27bb0e99e056a2d9188492]
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+Oct.-03 17:02:37.136 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 15; name: runSpadesAssembler (4); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4a/b08cc40c27bb0e99e056a2d9188492]
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+Oct.-03 17:07:37.164 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 15; name: runSpadesAssembler (4); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4a/b08cc40c27bb0e99e056a2d9188492]
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+Oct.-03 17:12:37.219 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 15; name: runSpadesAssembler (4); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4a/b08cc40c27bb0e99e056a2d9188492]
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+Oct.-03 17:17:37.230 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 15; name: runSpadesAssembler (4); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4a/b08cc40c27bb0e99e056a2d9188492]
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+Oct.-03 17:18:26.531 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: runSpadesAssembler (4); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4a/b08cc40c27bb0e99e056a2d9188492]
+Oct.-03 17:18:26.547 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 17:18:26.547 [Task submitter] INFO  nextflow.Session - [df/78e512] Submitted process > runSpadesAssembler (6)
+Oct.-03 17:22:37.239 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 17:27:37.256 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 17:32:37.345 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 17:37:37.360 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 17:42:37.387 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 17:47:37.449 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 17:52:37.475 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 17:57:37.542 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 17; name: runSpadesAssembler (6); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 18:01:50.515 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: runSpadesAssembler (6); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/df/78e512f880ab9c4492ebef0d9790b2]
+Oct.-03 18:01:50.555 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 18:01:50.555 [Task submitter] INFO  nextflow.Session - [10/bf0ea5] Submitted process > runSpadesAssembler (7)
+Oct.-03 18:02:37.580 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:07:37.599 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:12:37.642 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:17:37.657 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:22:37.662 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:27:37.677 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:32:37.695 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:37:37.724 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 18; name: runSpadesAssembler (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:40:21.366 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: runSpadesAssembler (7); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/10/bf0ea58a67d76950ee431a9358cea4]
+Oct.-03 18:40:21.383 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 18:40:21.383 [Task submitter] INFO  nextflow.Session - [97/c951c9] Submitted process > runSpadesAssembler (8)
+Oct.-03 18:42:37.735 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 19; name: runSpadesAssembler (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/97/c951c9a8a541bd46ea669c180c9069]
+Oct.-03 18:47:37.815 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 19; name: runSpadesAssembler (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/97/c951c9a8a541bd46ea669c180c9069]
+Oct.-03 18:52:37.913 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 19; name: runSpadesAssembler (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/97/c951c9a8a541bd46ea669c180c9069]
+Oct.-03 18:57:38.001 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 19; name: runSpadesAssembler (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/97/c951c9a8a541bd46ea669c180c9069]
+Oct.-03 19:02:38.072 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 19; name: runSpadesAssembler (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/97/c951c9a8a541bd46ea669c180c9069]
+Oct.-03 19:07:38.147 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 16; name: runSpadesAssembler (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/32/934e6c6652aa22f8b20dd7458bbc2d]
+~> TaskHandler[id: 19; name: runSpadesAssembler (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/97/c951c9a8a541bd46ea669c180c9069]
+Oct.-03 19:08:39.463 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Oct.-03 19:08:39.500 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] runSpadesAssembler
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Oct.-03 19:08:39.502 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct.-03 19:08:39.503 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct.-03 19:08:39.510 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (2)
+Oct.-03 19:08:39.542 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=17; failedCount=2; ignoredCount=0; cachedCount=0; succeedDuration=18h 14m 14s; failedDuration=0ms; cachedDuration=0ms]
+Oct.-03 19:08:39.542 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+Oct.-03 19:08:39.552 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Oct.-03 19:08:39.624 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":48.16,"min":42.27,"q1":45.91,"q2":48.18,"q3":50.31,"max":55.38,"minLabel":"AdapterRemovalV2 (1)","maxLabel":"AdapterRemovalV2 (8)","q1Label":"AdapterRemovalV2 (4)","q2Label":"AdapterRemovalV2 (3)","q3Label":"AdapterRemovalV2 (2)"},"process":"AdapterRemovalV2","mem":{"mean":74780262.4,"min":58953728,"q1":69726208,"q2":77240320,"q3":81789952,"max":85504000,"minLabel":"AdapterRemovalV2 (10)","maxLabel":"AdapterRemovalV2 (7)","q1Label":"AdapterRemovalV2 (4)","q2Label":"AdapterRemovalV2 (2)","q3Label":"AdapterRemovalV2 (3)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":437554380.8,"min":404344832,"q1":406923264,"q2":411222016,"q3":465583104,"max":531435520,"minLabel":"AdapterRemovalV2 (10)","maxLabel":"AdapterRemovalV2 (7)","q1Label":"AdapterRemovalV2 (4)","q2Label":"AdapterRemovalV2 (5)","q3Label":"AdapterRemovalV2 (8)"},"reads":{"mean":903279344,"min":71591248,"q1":697448406.25,"q2":979049007,"q3":1178939444.75,"max":1564012138,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (8)","q1Label":"AdapterRemovalV2 (5)","q2Label":"AdapterRemovalV2 (1)","q3Label":"AdapterRemovalV2 (7)"},"cpu":{"mean":288.94,"min":253.6,"q1":275.45,"q2":289.1,"q3":301.88,"max":332.3,"minLabel":"AdapterRemovalV2 (1)","maxLabel":"AdapterRemovalV2 (8)","q1Label":"AdapterRemovalV2 (4)","q2Label":"AdapterRemovalV2 (3)","q3Label":"AdapterRemovalV2 (2)"},"time":{"mean":133397.3,"min":11235,"q1":101066.75,"q2":140686.5,"q3":148960,"max":279620,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (10)","q1Label":"AdapterRemovalV2 (5)","q2Label":"AdapterRemovalV2 (8)","q3Label":"AdapterRemovalV2 (6)"},"writes":{"mean":694111152.7,"min":56127047,"q1":555386074.25,"q2":731897307,"q3":893708522,"max":1185362172,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (10)","q1Label":"AdapterRemovalV2 (5)","q2Label":"AdapterRemovalV2 (1)","q3Label":"AdapterRemovalV2 (7)"}},{"cpuUsage":{"mean":82.16,"min":77.22,"q1":82.6,"q2":82.83,"q3":83.47,"max":83.9,"minLabel":"runSpadesAssembler (1)","maxLabel":"runSpadesAssembler (6)","q1Label":"runSpadesAssembler (7)","q2Label":"runSpadesAssembler (4)","q3Label":"runSpadesAssembler (3)"},"process":"runSpadesAssembler","mem":{"mean":6373836117.33,"min":1595142144,"q1":4725955584,"q2":6978514944,"q3":8579288064,"max":9602863104,"minLabel":"runSpadesAssembler (1)","maxLabel":"runSpadesAssembler (7)","q1Label":"runSpadesAssembler (2)","q2Label":"runSpadesAssembler (3)","q3Label":"runSpadesAssembler (4)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":7368516949.33,"min":5404622848,"q1":5869960192,"q2":7147894784,"q3":8753519616,"max":9777979392,"minLabel":"runSpadesAssembler (1)","maxLabel":"runSpadesAssembler (7)","q1Label":"runSpadesAssembler (2)","q2Label":"runSpadesAssembler (3)","q3Label":"runSpadesAssembler (4)"},"reads":{"mean":24354208017.83,"min":2527079110,"q1":21488033944,"q2":23599793718.5,"q3":33919126086,"max":38255563999,"minLabel":"runSpadesAssembler (1)","maxLabel":"runSpadesAssembler (7)","q1Label":"runSpadesAssembler (2)","q2Label":"runSpadesAssembler (3)","q3Label":"runSpadesAssembler (4)"},"cpu":{"mean":492.97,"min":463.3,"q1":495.58,"q2":496.95,"q3":500.8,"max":503.4,"minLabel":"runSpadesAssembler (1)","maxLabel":"runSpadesAssembler (6)","q1Label":"runSpadesAssembler (7)","q2Label":"runSpadesAssembler (4)","q3Label":"runSpadesAssembler (3)"},"time":{"mean":1601283.67,"min":181566,"q1":1259427.25,"q2":1673558.5,"q3":2183756.5,"max":2603813,"minLabel":"runSpadesAssembler (1)","maxLabel":"runSpadesAssembler (6)","q1Label":"runSpadesAssembler (2)","q2Label":"runSpadesAssembler (3)","q3Label":"runSpadesAssembler (4)"},"writes":{"mean":25928074239.83,"min":6313285676,"q1":22203757717,"q2":25267842955.5,"q3":33070758044.75,"max":41865348140,"minLabel":"runSpadesAssembler (1)","maxLabel":"runSpadesAssembler (7)","q1Label":"runSpadesAssembler (2)","q2Label":"runSpadesAssembler (3)","q3Label":"runSpadesAssembler (4)"}},{"cpuUsage":{"mean":149.3,"min":149.3,"q1":149.3,"q2":149.3,"q3":149.3,"max":149.3,"minLabel":"MultiQC","maxLabel":"MultiQC","q1Label":"MultiQC","q2Label":"MultiQC","q3Label":"MultiQC"},"process":"MultiQC","mem":{"mean":92360704,"min":92360704,"q1":92360704,"q2":92360704,"q3":92360704,"max":92360704,"minLabel":"MultiQC","maxLabel":"MultiQC","q1Label":"MultiQC","q2Label":"MultiQC","q3Label":"MultiQC"},"memUsage":null,"timeUsage":null,"vmem":{"mean":2737614848,"min":2737614848,"q1":2737614848,"q2":2737614848,"q3":2737614848,"max":2737614848,"minLabel":"MultiQC","maxLabel":"MultiQC","q1Label":"MultiQC","q2Label":"MultiQC","q3Label":"MultiQC"},"reads":{"mean":20163950,"min":20163950,"q1":20163950,"q2":20163950,"q3":20163950,"max":20163950,"minLabel":"MultiQC","maxLabel":"MultiQC","q1Label":"MultiQC","q2Label":"MultiQC","q3Label":"MultiQC"},"cpu":{"mean":149.3,"min":149.3,"q1":149.3,"q2":149.3,"q3":149.3,"max":149.3,"minLabel":"MultiQC","maxLabel":"MultiQC","q1Label":"MultiQC","q2Label":"MultiQC","q3Label":"MultiQC"},"time":{"mean":3902,"min":3902,"q1":3902,"q2":3902,"q3":3902,"max":3902,"minLabel":"MultiQC","maxLabel":"MultiQC","q1Label":"MultiQC","q2Label":"MultiQC","q3Label":"MultiQC"},"writes":{"mean":6134586,"min":6134586,"q1":6134586,"q2":6134586,"q3":6134586,"max":6134586,"minLabel":"MultiQC","maxLabel":"MultiQC","q1Label":"MultiQC","q2Label":"MultiQC","q3Label":"MultiQC"}}]
+Oct.-03 19:08:40.626 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct.-03 19:08:40.638 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

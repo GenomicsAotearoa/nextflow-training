@@ -1,0 +1,94 @@
+Oct-03 12:20:38.313 [main] DEBUG nextflow.cli.Launcher - $> nextflow prepare_training.nf
+Oct-03 12:20:38.404 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.09.0-edge
+Oct-03 12:20:38.412 [main] INFO  nextflow.cli.CmdRun - Launching `prepare_training.nf` [cheesy_tesla] - revision: 9851641842
+Oct-03 12:20:38.470 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,route,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Oct-03 12:20:38.480 [main] DEBUG nextflow.Session - Session uuid: e0fa9a07-a669-4032-893e-23f43982c657
+Oct-03 12:20:38.480 [main] DEBUG nextflow.Session - Run name: cheesy_tesla
+Oct-03 12:20:38.482 [main] DEBUG nextflow.Session - Executor pool size: 64
+Oct-03 12:20:38.490 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.09.0-edge build 5167
+  Created: 16-09-2019 21:15 UTC (17-09-2019 09:15 NZDT)
+  System: Linux 5.0.0-29-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 1.8.0_222-8u222-b10-1ubuntu1~19.04.1-b10
+  Encoding: UTF-8 (UTF-8)
+  Process: 97352@josephguhlin [127.0.1.1]
+  CPUs: 64 - Mem: 125.8 GB (85.2 GB) - Swap: 976 MB (976 MB)
+Oct-03 12:20:38.541 [main] DEBUG nextflow.Session - Work-dir: /home/josephguhlin/work/nextflow-training/work [ext2/ext3]
+Oct-03 12:20:38.542 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/josephguhlin/work/nextflow-training/bin
+Oct-03 12:20:38.554 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Oct-03 12:20:38.555 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct-03 12:20:38.654 [main] DEBUG nextflow.Session - Session start invoked
+Oct-03 12:20:38.983 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-03 12:20:39.084 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-03 12:20:39.085 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-03 12:20:39.087 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct-03 12:20:39.091 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.8 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Oct-03 12:20:39.202 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > downloadAndRename -- maxForks: 64
+Oct-03 12:20:39.221 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Oct-03 12:20:39.222 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct-03 12:20:39.222 [main] DEBUG nextflow.Session - Session await
+Oct-03 12:20:39.373 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.377 [Task submitter] INFO  nextflow.Session - [4c/d5183d] Submitted process > downloadAndRename (7)
+Oct-03 12:20:39.385 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.385 [Task submitter] INFO  nextflow.Session - [a3/3a1880] Submitted process > downloadAndRename (4)
+Oct-03 12:20:39.389 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.389 [Task submitter] INFO  nextflow.Session - [aa/22a0e4] Submitted process > downloadAndRename (5)
+Oct-03 12:20:39.392 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.393 [Task submitter] INFO  nextflow.Session - [d2/194acc] Submitted process > downloadAndRename (8)
+Oct-03 12:20:39.397 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.397 [Task submitter] INFO  nextflow.Session - [34/bee45c] Submitted process > downloadAndRename (11)
+Oct-03 12:20:39.400 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.400 [Task submitter] INFO  nextflow.Session - [e0/251cf1] Submitted process > downloadAndRename (9)
+Oct-03 12:20:39.403 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.404 [Task submitter] INFO  nextflow.Session - [5d/d3cbb4] Submitted process > downloadAndRename (10)
+Oct-03 12:20:39.406 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.407 [Task submitter] INFO  nextflow.Session - [65/cc4fe7] Submitted process > downloadAndRename (1)
+Oct-03 12:20:39.409 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.409 [Task submitter] INFO  nextflow.Session - [39/638ed6] Submitted process > downloadAndRename (3)
+Oct-03 12:20:39.412 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.413 [Task submitter] INFO  nextflow.Session - [36/aa90c0] Submitted process > downloadAndRename (6)
+Oct-03 12:20:39.416 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:20:39.417 [Task submitter] INFO  nextflow.Session - [1d/3bcc8f] Submitted process > downloadAndRename (2)
+Oct-03 12:20:57.471 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: downloadAndRename (9); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/e0/251cf17f30a26ae586474c7f4b9640]
+Oct-03 12:20:57.496 [Task monitor] DEBUG n.util.BlockingThreadExecutorFactory - Thread pool name=FileTransfer; maxThreads=192; maxQueueSize=576; keepAlive=1m
+Oct-03 12:23:17.365 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: downloadAndRename (11); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/34/bee45cc0b13f0fc051e9f9176b5858]
+Oct-03 12:25:24.834 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: downloadAndRename (6); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/36/aa90c078992e80a7de0bb59f02ab16]
+Oct-03 12:25:39.254 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 8 -- pending tasks are shown below
+~> TaskHandler[id: 7; name: downloadAndRename (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/4c/d5183d1fb44591b8dc5745aebda34c]
+~> TaskHandler[id: 3; name: downloadAndRename (4); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/a3/3a18805b74a531d1bca15ebb93fd58]
+~> TaskHandler[id: 4; name: downloadAndRename (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/aa/22a0e4568b040f3f781d254e446045]
+~> TaskHandler[id: 8; name: downloadAndRename (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/d2/194accc9b5b39105c23c1667737955]
+~> TaskHandler[id: 10; name: downloadAndRename (10); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/5d/d3cbb4566c60144ed0c983ec3c255b]
+~> TaskHandler[id: 5; name: downloadAndRename (1); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/65/cc4fe7222baad483f3855ac3c4c7c8]
+~> TaskHandler[id: 1; name: downloadAndRename (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/39/638ed633546a84389d5cb7f3f60e12]
+~> TaskHandler[id: 6; name: downloadAndRename (2); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/1d/3bcc8f304a40126516a58a843337cc]
+Oct-03 12:28:42.195 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: downloadAndRename (10); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/5d/d3cbb4566c60144ed0c983ec3c255b]
+Oct-03 12:29:08.049 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: downloadAndRename (4); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/a3/3a18805b74a531d1bca15ebb93fd58]
+Oct-03 12:30:39.353 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 6 -- pending tasks are shown below
+~> TaskHandler[id: 7; name: downloadAndRename (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/4c/d5183d1fb44591b8dc5745aebda34c]
+~> TaskHandler[id: 4; name: downloadAndRename (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/aa/22a0e4568b040f3f781d254e446045]
+~> TaskHandler[id: 8; name: downloadAndRename (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/d2/194accc9b5b39105c23c1667737955]
+~> TaskHandler[id: 5; name: downloadAndRename (1); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/65/cc4fe7222baad483f3855ac3c4c7c8]
+~> TaskHandler[id: 1; name: downloadAndRename (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/39/638ed633546a84389d5cb7f3f60e12]
+~> TaskHandler[id: 6; name: downloadAndRename (2); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/1d/3bcc8f304a40126516a58a843337cc]
+Oct-03 12:34:07.654 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: downloadAndRename (2); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/1d/3bcc8f304a40126516a58a843337cc]
+Oct-03 12:35:39.368 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 7; name: downloadAndRename (7); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/4c/d5183d1fb44591b8dc5745aebda34c]
+~> TaskHandler[id: 4; name: downloadAndRename (5); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/aa/22a0e4568b040f3f781d254e446045]
+~> TaskHandler[id: 8; name: downloadAndRename (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/d2/194accc9b5b39105c23c1667737955]
+~> TaskHandler[id: 5; name: downloadAndRename (1); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/65/cc4fe7222baad483f3855ac3c4c7c8]
+~> TaskHandler[id: 1; name: downloadAndRename (3); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/39/638ed633546a84389d5cb7f3f60e12]
+Oct-03 12:35:49.169 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: downloadAndRename (3); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/39/638ed633546a84389d5cb7f3f60e12]
+Oct-03 12:36:23.132 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: downloadAndRename (1); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/65/cc4fe7222baad483f3855ac3c4c7c8]
+Oct-03 12:36:27.846 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: downloadAndRename (7); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/4c/d5183d1fb44591b8dc5745aebda34c]
+Oct-03 12:39:01.854 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: downloadAndRename (5); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/aa/22a0e4568b040f3f781d254e446045]
+Oct-03 12:40:39.373 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 8; name: downloadAndRename (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/d2/194accc9b5b39105c23c1667737955]
+Oct-03 12:45:39.442 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 8; name: downloadAndRename (8); status: RUNNING; exit: -; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/d2/194accc9b5b39105c23c1667737955]
+Oct-03 12:46:41.711 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: downloadAndRename (8); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/work/d2/194accc9b5b39105c23c1667737955]
+Oct-03 12:46:41.721 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct-03 12:46:41.811 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-03 12:46:42.616 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=11; failedCount=0; ignoredCount=0; cachedCount=0; succeedDuration=2h 8m 47s; failedDuration=0ms; cachedDuration=0ms]
+Oct-03 12:46:42.813 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct-03 12:46:42.822 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

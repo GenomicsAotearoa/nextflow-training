@@ -1,0 +1,58 @@
+Oct-03 12:16:04.942 [main] DEBUG nextflow.cli.Launcher - $> nextflow prepare_training.nf
+Oct-03 12:16:05.045 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.09.0-edge
+Oct-03 12:16:05.054 [main] INFO  nextflow.cli.CmdRun - Launching `prepare_training.nf` [berserk_joliot] - revision: 02262a9e9c
+Oct-03 12:16:05.120 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,route,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Oct-03 12:16:05.131 [main] DEBUG nextflow.Session - Session uuid: a1154884-4c57-4e35-a587-aa8627910c74
+Oct-03 12:16:05.131 [main] DEBUG nextflow.Session - Run name: berserk_joliot
+Oct-03 12:16:05.133 [main] DEBUG nextflow.Session - Executor pool size: 64
+Oct-03 12:16:05.142 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.09.0-edge build 5167
+  Created: 16-09-2019 21:15 UTC (17-09-2019 09:15 NZDT)
+  System: Linux 5.0.0-29-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 1.8.0_222-8u222-b10-1ubuntu1~19.04.1-b10
+  Encoding: UTF-8 (UTF-8)
+  Process: 93584@josephguhlin [127.0.1.1]
+  CPUs: 64 - Mem: 125.8 GB (84.3 GB) - Swap: 976 MB (976 MB)
+Oct-03 12:16:05.200 [main] DEBUG nextflow.Session - Work-dir: /home/josephguhlin/work/nextflow-training/work [ext2/ext3]
+Oct-03 12:16:05.201 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/josephguhlin/work/nextflow-training/bin
+Oct-03 12:16:05.216 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Oct-03 12:16:05.218 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct-03 12:16:05.321 [main] DEBUG nextflow.Session - Session start invoked
+Oct-03 12:16:05.666 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-03 12:16:05.751 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct-03 12:16:05.752 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct-03 12:16:05.754 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct-03 12:16:05.757 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.8 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Oct-03 12:16:05.868 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > downloadAndRename -- maxForks: 64
+Oct-03 12:16:05.886 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Oct-03 12:16:05.887 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct-03 12:16:05.887 [main] DEBUG nextflow.Session - Session await
+Oct-03 12:16:06.014 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.017 [Task submitter] INFO  nextflow.Session - [2f/f3aad4] Submitted process > downloadAndRename (4)
+Oct-03 12:16:06.022 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.023 [Task submitter] INFO  nextflow.Session - [55/336c23] Submitted process > downloadAndRename (1)
+Oct-03 12:16:06.026 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.026 [Task submitter] INFO  nextflow.Session - [ec/4a016b] Submitted process > downloadAndRename (11)
+Oct-03 12:16:06.028 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.029 [Task submitter] INFO  nextflow.Session - [83/4e48bf] Submitted process > downloadAndRename (7)
+Oct-03 12:16:06.033 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.034 [Task submitter] INFO  nextflow.Session - [51/c1f369] Submitted process > downloadAndRename (9)
+Oct-03 12:16:06.037 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.038 [Task submitter] INFO  nextflow.Session - [d9/6ca9dc] Submitted process > downloadAndRename (2)
+Oct-03 12:16:06.041 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.042 [Task submitter] INFO  nextflow.Session - [64/266e1f] Submitted process > downloadAndRename (5)
+Oct-03 12:16:06.045 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.046 [Task submitter] INFO  nextflow.Session - [4c/058817] Submitted process > downloadAndRename (10)
+Oct-03 12:16:06.049 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.049 [Task submitter] INFO  nextflow.Session - [6c/bc0c32] Submitted process > downloadAndRename (6)
+Oct-03 12:16:06.051 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.051 [Task submitter] INFO  nextflow.Session - [8b/c7577a] Submitted process > downloadAndRename (3)
+Oct-03 12:16:06.053 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct-03 12:16:06.054 [Task submitter] INFO  nextflow.Session - [57/6facd4] Submitted process > downloadAndRename (8)
+Oct-03 12:16:42.596 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Oct-03 12:16:42.611 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct-03 12:16:42.611 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-03 12:16:42.616 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (11)
+Oct-03 12:16:42.656 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=11; ignoredCount=0; cachedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms]
+Oct-03 12:16:42.786 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct-03 12:16:42.796 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

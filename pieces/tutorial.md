@@ -121,7 +121,6 @@ process MultiQC {
     """
 }
 ```
-
 # Assembling these genomes
 ## Same starting channel
 ```Nextflow
@@ -296,4 +295,232 @@ Completed at: 03-Oct-2019 22:39:43
 Duration    : 14m 42s
 CPU hours   : 3.2
 Succeeded   : 9
+```
+
+# Output of Report
+
+# Nextflow Documentation
+https://www.nextflow.io/docs/latest/index.html
+
+# Annotation the genomes
+```Nextflow
+Channel.fromPath("Assemblies/*.fa")
+        .set { assemblies_ch }
+
+process ProdigalAnnotate {
+        module "prodigal/2.6.3-GCCcore-7.4.0"
+        tag { "${assembly.baseName}" }
+        input:
+              	file(assembly) from assemblies_ch
+        output:
+               	file("*.faa") into proteins_ch
+
+
+"""
+prodigal -f gff -a ${assembly.baseName}.faa -i ${assembly}
+"""
+
+}
+```
+
+# Exercise: Combine the three files into a single script?
+You can't re-use channels, so instead of setting the input channel, you will have to use "into"
+```Nextflow
+Channel.fromFilePairs("../sequences/*_{1,2}.fastq.gz")
+        .into { fastqc_input_ch, trimming_input_ch }
+```
+
+# Exercise 2: Make it run on SLURM
+You will need to add the cpus, time, memory settings to each process!
+```Nextflow
+process calculateRegions {
+        tag { "Calculate regions" }
+        // Runs fast so execute locally
+        executor 'local'
+        cpus 1
+        cache false
+        time '10m'
+        memory '1000 MB'
+        conda 'bioconda::freebayes'
+
+...............
+
+process FreeBayes {
+        tag { "FreeBayes ${region_name}" }
+        cpus 2
+//      queue 'ga_hugemem'
+        queue 'long'
+        time '10d'
+        memory '104 GB'
+        conda 'bioconda::freebayes'
+        storeDir './freebayes-regions/'
+//      publishDir './freebayes-regions/'
+................
+```
+
+And set up a nextflow.config file
+```Nextflow
+process {
+	executor = "slurm"
+    clusterOptions = "-A YOUR PROJECT ID"
+
+}
+```
+
+On mahuika, launch a screen (to keep nextflow program running)
+
+```Console
+$ nextflow freebayes.nf -resume -qs 100
+```
+
+-qs says submit up to 100 jobs at a time (NeSI supports 1000, but it's best to not always overload it)
+-resume is when a pipeline has had some failures and you've fixed things (or added additional resources)
+
+# Combined SLURM Script
+```Nextflow
+Channel.fromFilePairs("../sequences/*_{1,2}.fastq.gz")
+        .into { fastqc_input_ch; trimming_input_ch }
+
+process fastQC {
+    conda 'bioconda::fastqc'
+    cpus 6
+    time '30m'
+    memory '16 GB'
+    queue 'large'
+
+    input:
+        set strain, file(reads) from fastqc_input_ch
+
+    output:
+        file("*_fastqc.zip") into fastqc_output_ch
+    
+    """
+        mkdir output
+        fastqc -o . \
+        -f fastq \
+        -t 6 \
+        ${reads}
+
+    """
+}
+
+process MultiQC_fastq {
+    conda 'bioconda::multiqc'
+    publishDir './MultiQC_output'
+
+    cpus 1
+    time '10m'
+    memory '8 GB'
+    queue 'large'
+
+    input:
+        file(fastqc_out) from fastqc_output_ch.collect()
+
+    output:
+        file("multiqc_report.html")
+        file("multiqc_data")
+
+    """
+    multiqc .
+    """
+}
+
+process AdapterRemovalV2 {
+    conda 'bioconda::adapterremoval'
+    cpus 6
+    time '30m'
+    memory '32 GB'
+    queue 'large'
+
+    publishDir './processed/', mode: 'copy'
+    input: 
+        set strain, file(reads) from trimming_input_ch
+
+    output:
+        set val(strain), file("${strain}.*") into processed_reads_ch
+        file("${strain}.settings") into qc_report_ch
+
+    """
+    AdapterRemoval \
+        --file1 ${reads[0]} \
+        --file2 ${reads[1]} \
+        --threads 6 \
+        --basename ${strain} \
+        --gzip \
+        --collapse
+
+    """
+}
+
+process MultiQC_trimmed {
+    conda 'bioconda::multiqc'
+    publishDir './Processing_MultiQC_output'
+
+    cpus 1
+    time '20m'
+    memory '8 GB'
+    queue 'large'
+
+    input:
+        file(settings_out) from qc_report_ch.collect()
+
+    output:
+        file("multiqc_report.html")
+        file("multiqc_data")
+
+    """
+    multiqc .
+    """
+}
+
+process runMegahitAssembler {
+    conda 'bioconda::megahit'
+    cpus 6
+    time '20m'
+    memory '8 GB'
+    queue 'large'
+    publishDir "./Assemblies", mode: 'copy'
+    input: 
+        set sequence_id, file(files) from processed_reads_ch
+    
+    output:
+        file("${sequence_id}.contigs.fa") into assemblies_ch
+
+    """
+
+    zcat *collapsed*gz > merged.fq
+    mv ${sequence_id}.pair1.truncated.gz pair1.fq.gz
+    mv ${sequence_id}.pair2.truncated.gz pair2.fq.gz
+    mv ${sequence_id}.singleton.truncated.gz singles.fq.gz
+    
+    megahit -1 pair1.fq.gz -2 pair2.fq.gz \
+        -r merged.fq,singles.fq.gz \
+        -t 6 \
+        -o output \
+        --out-prefix ${sequence_id}
+
+    mv output/${sequence_id}.contigs.fa ${sequence_id}.contigs.fa
+    """
+}
+
+process ProdigalAnnotate {
+        module "prodigal/2.6.3-GCCcore-7.4.0"
+
+        cpus 1
+        time '15m'
+        memory '12 GB'
+        queue 'large'
+
+        tag { "${assembly.baseName}" }
+        input:
+              	file(assembly) from assemblies_ch
+        output:
+               	file("*.faa") into proteins_ch
+
+
+"""
+prodigal -f gff -a ${assembly.baseName}.faa -i ${assembly}
+"""
+
+}
 ```

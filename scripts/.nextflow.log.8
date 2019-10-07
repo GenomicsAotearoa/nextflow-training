@@ -1,0 +1,80 @@
+Oct.-03 19:08:12.939 [main] DEBUG nextflow.cli.Launcher - $> nextflow 1_processing_megahit.nf -with-report -with-trace
+Oct.-03 19:08:13.055 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.09.0-edge
+Oct.-03 19:08:13.065 [main] INFO  nextflow.cli.CmdRun - Launching `1_processing_megahit.nf` [desperate_hypatia] - revision: d43b8ac25e
+Oct.-03 19:08:13.179 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,route,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Oct.-03 19:08:13.193 [main] DEBUG nextflow.Session - Session uuid: 169dfd9b-4929-42f3-b361-3b47842a4aa8
+Oct.-03 19:08:13.194 [main] DEBUG nextflow.Session - Run name: desperate_hypatia
+Oct.-03 19:08:13.196 [main] DEBUG nextflow.Session - Executor pool size: 64
+Oct.-03 19:08:13.231 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.09.0-edge build 5167
+  Created: 16-09-2019 21:15 UTC (17-09-2019 09:15 NZDT)
+  System: Linux 5.0.0-29-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.1-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 37574@josephguhlin [127.0.1.1]
+  CPUs: 64 - Mem: 125.8 GB (19.7 GB) - Swap: 976 MB (956 MB)
+Oct.-03 19:08:13.254 [main] DEBUG nextflow.Session - Work-dir: /home/josephguhlin/work/nextflow-training/scripts/work [ext2/ext3]
+Oct.-03 19:08:13.255 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/josephguhlin/work/nextflow-training/scripts/bin
+Oct.-03 19:08:13.271 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Oct.-03 19:08:13.274 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct.-03 19:08:13.450 [main] DEBUG nextflow.Session - Session start invoked
+Oct.-03 19:08:13.454 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /home/josephguhlin/work/nextflow-training/scripts/trace.txt
+Oct.-03 19:08:13.772 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct.-03 19:08:13.816 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ../sequences/; pattern: *_{1,2}.fastq.gz; options: [:]
+Oct.-03 19:08:13.965 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 19:08:13.965 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 19:08:13.968 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct.-03 19:08:13.972 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.8 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Oct.-03 19:08:14.006 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > AdapterRemovalV2 -- maxForks: 64
+Oct.-03 19:08:14.039 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 19:08:14.039 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 19:08:14.043 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > MultiQC -- maxForks: 64
+Oct.-03 19:08:14.051 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 19:08:14.051 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 19:08:14.054 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > runMegahitAssembler -- maxForks: 2
+Oct.-03 19:08:14.061 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Oct.-03 19:08:14.062 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct.-03 19:08:14.063 [main] DEBUG nextflow.Session - Session await
+Oct.-03 19:08:14.150 [Actor Thread 13] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::adapterremoval; path=/home/josephguhlin/work/nextflow-training/scripts/work/conda/env-9feb85e91f373ff236a27fa09856e470
+Oct.-03 19:08:14.225 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.229 [Task submitter] INFO  nextflow.Session - [dc/4255ca] Submitted process > AdapterRemovalV2 (3)
+Oct.-03 19:08:14.237 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.238 [Task submitter] INFO  nextflow.Session - [07/6437bc] Submitted process > AdapterRemovalV2 (9)
+Oct.-03 19:08:14.243 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.244 [Task submitter] INFO  nextflow.Session - [f9/45ee20] Submitted process > AdapterRemovalV2 (6)
+Oct.-03 19:08:14.248 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.249 [Task submitter] INFO  nextflow.Session - [dc/13e0be] Submitted process > AdapterRemovalV2 (2)
+Oct.-03 19:08:14.253 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.254 [Task submitter] INFO  nextflow.Session - [5c/925bc2] Submitted process > AdapterRemovalV2 (10)
+Oct.-03 19:08:14.258 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.258 [Task submitter] INFO  nextflow.Session - [9d/68b52a] Submitted process > AdapterRemovalV2 (1)
+Oct.-03 19:08:14.264 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.264 [Task submitter] INFO  nextflow.Session - [b9/41f546] Submitted process > AdapterRemovalV2 (8)
+Oct.-03 19:08:14.271 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.272 [Task submitter] INFO  nextflow.Session - [0b/a1cb63] Submitted process > AdapterRemovalV2 (4)
+Oct.-03 19:08:14.278 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.278 [Task submitter] INFO  nextflow.Session - [a9/5a6633] Submitted process > AdapterRemovalV2 (7)
+Oct.-03 19:08:14.283 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:14.284 [Task submitter] INFO  nextflow.Session - [c9/cdef0b] Submitted process > AdapterRemovalV2 (5)
+Oct.-03 19:08:17.536 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Oct.-03 19:08:17.564 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] MultiQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: settings_out
+  port 1: (cntrl) -     ; channel: $
+
+[process] runMegahitAssembler
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Oct.-03 19:08:17.567 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct.-03 19:08:17.567 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct.-03 19:08:17.575 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (10)
+Oct.-03 19:08:17.644 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=10; ignoredCount=0; cachedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms]
+Oct.-03 19:08:17.645 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+Oct.-03 19:08:17.649 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Oct.-03 19:08:17.691 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":null,"process":"AdapterRemovalV2","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":null,"writes":null}]
+Oct.-03 19:08:18.504 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct.-03 19:08:18.515 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

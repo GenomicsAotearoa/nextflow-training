@@ -1,0 +1,170 @@
+Oct.-03 19:08:21.121 [main] DEBUG nextflow.cli.Launcher - $> nextflow 1_processing_megahit.nf -with-report -with-trace -resume
+Oct.-03 19:08:21.231 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.09.0-edge
+Oct.-03 19:08:21.242 [main] INFO  nextflow.cli.CmdRun - Launching `1_processing_megahit.nf` [grave_caravaggio] - revision: d43b8ac25e
+Oct.-03 19:08:21.360 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,route,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Oct.-03 19:08:21.366 [main] DEBUG nextflow.Session - Session uuid: 169dfd9b-4929-42f3-b361-3b47842a4aa8
+Oct.-03 19:08:21.366 [main] DEBUG nextflow.Session - Run name: grave_caravaggio
+Oct.-03 19:08:21.367 [main] DEBUG nextflow.Session - Executor pool size: 64
+Oct.-03 19:08:21.396 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.09.0-edge build 5167
+  Created: 16-09-2019 21:15 UTC (17-09-2019 09:15 NZDT)
+  System: Linux 5.0.0-29-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.1-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 39916@josephguhlin [127.0.1.1]
+  CPUs: 64 - Mem: 125.8 GB (18.6 GB) - Swap: 976 MB (956 MB)
+Oct.-03 19:08:21.433 [main] DEBUG nextflow.Session - Work-dir: /home/josephguhlin/work/nextflow-training/scripts/work [ext2/ext3]
+Oct.-03 19:08:21.433 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/josephguhlin/work/nextflow-training/scripts/bin
+Oct.-03 19:08:21.460 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Oct.-03 19:08:21.462 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct.-03 19:08:21.669 [main] DEBUG nextflow.Session - Session start invoked
+Oct.-03 19:08:21.674 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /home/josephguhlin/work/nextflow-training/scripts/trace.txt
+Oct.-03 19:08:22.028 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct.-03 19:08:22.074 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: ../sequences/; pattern: *_{1,2}.fastq.gz; options: [:]
+Oct.-03 19:08:22.270 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 19:08:22.270 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 19:08:22.273 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Oct.-03 19:08:22.277 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.8 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Oct.-03 19:08:22.320 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > AdapterRemovalV2 -- maxForks: 64
+Oct.-03 19:08:22.356 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 19:08:22.356 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 19:08:22.359 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > MultiQC -- maxForks: 64
+Oct.-03 19:08:22.368 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Oct.-03 19:08:22.368 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Oct.-03 19:08:22.371 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > runMegahitAssembler -- maxForks: 2
+Oct.-03 19:08:22.375 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Oct.-03 19:08:22.376 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct.-03 19:08:22.377 [main] DEBUG nextflow.Session - Session await
+Oct.-03 19:08:22.458 [Actor Thread 13] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::adapterremoval; path=/home/josephguhlin/work/nextflow-training/scripts/work/conda/env-9feb85e91f373ff236a27fa09856e470
+Oct.-03 19:08:22.544 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.549 [Task submitter] INFO  nextflow.Session - [18/d6b07c] Submitted process > AdapterRemovalV2 (7)
+Oct.-03 19:08:22.559 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.560 [Task submitter] INFO  nextflow.Session - [4c/dc66dd] Submitted process > AdapterRemovalV2 (4)
+Oct.-03 19:08:22.567 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.567 [Task submitter] INFO  nextflow.Session - [c3/c1932d] Submitted process > AdapterRemovalV2 (6)
+Oct.-03 19:08:22.572 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.573 [Task submitter] INFO  nextflow.Session - [5b/d0288b] Submitted process > AdapterRemovalV2 (2)
+Oct.-03 19:08:22.580 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.581 [Task submitter] INFO  nextflow.Session - [f2/c8a303] Submitted process > AdapterRemovalV2 (5)
+Oct.-03 19:08:22.616 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.617 [Task submitter] INFO  nextflow.Session - [33/7f2d5b] Submitted process > AdapterRemovalV2 (3)
+Oct.-03 19:08:22.623 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.624 [Task submitter] INFO  nextflow.Session - [23/fa3eed] Submitted process > AdapterRemovalV2 (10)
+Oct.-03 19:08:22.631 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.631 [Task submitter] INFO  nextflow.Session - [20/650122] Submitted process > AdapterRemovalV2 (1)
+Oct.-03 19:08:22.636 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.637 [Task submitter] INFO  nextflow.Session - [fb/db3296] Submitted process > AdapterRemovalV2 (8)
+Oct.-03 19:08:22.641 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:22.642 [Task submitter] INFO  nextflow.Session - [35/81adc1] Submitted process > AdapterRemovalV2 (9)
+Oct.-03 19:08:37.482 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: AdapterRemovalV2 (3); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/33/7f2d5bc107b9c707f0a1314798dc95]
+Oct.-03 19:08:37.507 [Actor Thread 14] INFO  nextflow.conda.CondaCache - Creating Conda env: bioconda::megahit [cache /home/josephguhlin/work/nextflow-training/scripts/work/conda/env-c457883a10a7ab26628286ed0267b7bf]
+Oct.-03 19:08:37.512 [Task monitor] DEBUG n.util.BlockingThreadExecutorFactory - Thread pool name=FileTransfer; maxThreads=192; maxQueueSize=576; keepAlive=1m
+Oct.-03 19:08:45.852 [Actor Thread 14] DEBUG nextflow.conda.CondaCache - Conda create complete env=bioconda::megahit path=/home/josephguhlin/work/nextflow-training/scripts/work/conda/env-c457883a10a7ab26628286ed0267b7bf
+Oct.-03 19:08:45.860 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:08:45.860 [Task submitter] INFO  nextflow.Session - [4d/d027c7] Submitted process > runMegahitAssembler (1)
+Oct.-03 19:09:54.112 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: AdapterRemovalV2 (4); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4c/dc66dd16398394849d71ddf5a1d00e]
+Oct.-03 19:09:54.127 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:09:54.128 [Task submitter] INFO  nextflow.Session - [b8/627976] Submitted process > runMegahitAssembler (2)
+Oct.-03 19:10:02.835 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: AdapterRemovalV2 (5); status: COMPLETED; exit: 0; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/f2/c8a3036a5720e803a0d033ada9daa8]
+Oct.-03 19:10:29.881 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: runMegahitAssembler (1); status: COMPLETED; exit: 1; error: -; workDir: /home/josephguhlin/work/nextflow-training/scripts/work/4d/d027c7a7bc386146d836e22dfedacd]
+Oct.-03 19:10:29.908 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'runMegahitAssembler (1)'
+
+Caused by:
+  Process `runMegahitAssembler (1)` terminated with an error exit status (1)
+
+Command executed:
+
+  zcat *collapsed*gz > merged.fq
+  mv Ps_Cucurbits.pair1.truncated.gz pair1.fq.gz
+  mv Ps_Cucurbits.pair2.truncated.gz pair2.fq.gz
+  mv Ps_Cucurbits.singleton.truncated.gz singles.fq.gz
+  
+  megahit -1 pair1.fq.gz -2 pair2.fq.gz         -r merged.fq,singles.fq.gz         -t 6         -o output         --out-prefix Ps_Cucurbits
+  
+  mv output/scaffolds.fasta ./Ps_Cucurbits.scaffolds.fasta
+  mv output/contigs.fasta ./Ps_Cucurbits.contigs.fasta
+  mv output/assembly_graph.fastg ./Ps_Cucurbits.assembly_graph.fastg
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  2019-10-03 19:08:46 - MEGAHIT v1.2.8
+  2019-10-03 19:08:46 - Using megahit_core with POPCNT and BMI2 support
+  2019-10-03 19:08:46 - Convert reads to binary library
+  2019-10-03 19:08:47 - b'INFO  sequence/io/sequence_lib.cpp  :   77 - Lib 0 (pair1.fq.gz,pair2.fq.gz): pe, 173946 reads, 251 max length'
+  2019-10-03 19:08:47 - b'INFO  sequence/io/sequence_lib.cpp  :   77 - Lib 1 (merged.fq): se, 108345 reads, 491 max length'
+  2019-10-03 19:08:47 - b'INFO  sequence/io/sequence_lib.cpp  :   77 - Lib 2 (singles.fq.gz): se, 0 reads, 0 max length'
+  2019-10-03 19:08:47 - b'INFO  utils/utils.h                 :  152 - Real: 0.7247\tuser: 0.5350\tsys: 0.1021\tmaxrss: 30028'
+  2019-10-03 19:08:47 - k-max reset to: 141 
+  2019-10-03 19:08:47 - Start assembly. Number of CPU threads 6 
+  2019-10-03 19:08:47 - k list: 21,29,39,59,79,99,119,141 
+  2019-10-03 19:08:47 - Memory used: 121614881587
+  2019-10-03 19:08:47 - Extract solid (k+1)-mers for k = 21 
+  2019-10-03 19:08:52 - Build graph for k = 21 
+  2019-10-03 19:08:54 - Assemble contigs from SdBG for k = 21
+  2019-10-03 19:08:59 - Local assembly for k = 21
+  2019-10-03 19:09:04 - Extract iterative edges from k = 21 to 29 
+  2019-10-03 19:09:05 - Build graph for k = 29 
+  2019-10-03 19:09:07 - Assemble contigs from SdBG for k = 29
+  2019-10-03 19:09:12 - Local assembly for k = 29
+  2019-10-03 19:09:16 - Extract iterative edges from k = 29 to 39 
+  2019-10-03 19:09:17 - Build graph for k = 39 
+  2019-10-03 19:09:18 - Assemble contigs from SdBG for k = 39
+  2019-10-03 19:09:22 - Local assembly for k = 39
+  2019-10-03 19:09:27 - Extract iterative edges from k = 39 to 59 
+  2019-10-03 19:09:28 - Build graph for k = 59 
+  2019-10-03 19:09:29 - Assemble contigs from SdBG for k = 59
+  2019-10-03 19:09:34 - Local assembly for k = 59
+  2019-10-03 19:09:39 - Extract iterative edges from k = 59 to 79 
+  2019-10-03 19:09:39 - Build graph for k = 79 
+  2019-10-03 19:09:40 - Assemble contigs from SdBG for k = 79
+  2019-10-03 19:09:45 - Local assembly for k = 79
+  2019-10-03 19:09:50 - Extract iterative edges from k = 79 to 99 
+  2019-10-03 19:09:51 - Build graph for k = 99 
+  2019-10-03 19:09:52 - Assemble contigs from SdBG for k = 99
+  2019-10-03 19:09:57 - Local assembly for k = 99
+  2019-10-03 19:10:01 - Extract iterative edges from k = 99 to 119 
+  2019-10-03 19:10:02 - Build graph for k = 119 
+  2019-10-03 19:10:03 - Assemble contigs from SdBG for k = 119
+  2019-10-03 19:10:08 - Local assembly for k = 119
+  2019-10-03 19:10:13 - Extract iterative edges from k = 119 to 141 
+  2019-10-03 19:10:14 - Build graph for k = 141 
+  2019-10-03 19:10:15 - Assemble contigs from SdBG for k = 141
+  2019-10-03 19:10:19 - Merging to output final contigs 
+  2019-10-03 19:10:19 - 386 contigs, total 5996710 bp, min 200 bp, max 296139 bp, avg 15535 bp, N50 90549 bp
+  2019-10-03 19:10:19 - ALL DONE. Time elapsed: 93.209625 seconds 
+  mv: cannot stat 'output/scaffolds.fasta': No such file or directory
+
+Work dir:
+  /home/josephguhlin/work/nextflow-training/scripts/work/4d/d027c7a7bc386146d836e22dfedacd
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Oct.-03 19:10:29.912 [Task monitor] DEBUG nextflow.trace.TraceRecord - Not a valid trace `realtime` value: '2'
+Oct.-03 19:10:29.916 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `runMegahitAssembler (1)` terminated with an error exit status (1)
+Oct.-03 19:10:29.920 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Oct.-03 19:10:29.920 [Task submitter] INFO  nextflow.Session - [74/e1bb7c] Submitted process > runMegahitAssembler (3)
+Oct.-03 19:10:29.930 [Task monitor] DEBUG nextflow.Session - The following nodes are still active:
+[process] MultiQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: settings_out
+  port 1: (cntrl) -     ; channel: $
+
+[process] runMegahitAssembler
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Oct.-03 19:10:29.933 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct.-03 19:10:29.934 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct.-03 19:10:29.941 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (9)
+Oct.-03 19:10:29.992 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=3; failedCount=10; ignoredCount=0; cachedCount=0; succeedDuration=20m 37s; failedDuration=10m 24s; cachedDuration=0ms]
+Oct.-03 19:10:29.993 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+Oct.-03 19:10:30.001 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Oct.-03 19:10:30.047 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":46.24,"min":44.38,"q1":44.58,"q2":44.77,"q3":47.17,"max":49.57,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (5)","q1Label":"AdapterRemovalV2 (3)","q2Label":"AdapterRemovalV2 (4)","q3Label":"AdapterRemovalV2 (4)"},"process":"AdapterRemovalV2","mem":{"mean":73680213.33,"min":64012288,"q1":70146048,"q2":76279808,"q3":78514176,"max":80748544,"minLabel":"AdapterRemovalV2 (4)","maxLabel":"AdapterRemovalV2 (5)","q1Label":"AdapterRemovalV2 (4)","q2Label":"AdapterRemovalV2 (3)","q3Label":"AdapterRemovalV2 (3)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":407330816,"min":404643840,"q1":405936128,"q2":407228416,"q3":408674304,"max":410120192,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (4)","q1Label":"AdapterRemovalV2 (3)","q2Label":"AdapterRemovalV2 (5)","q3Label":"AdapterRemovalV2 (5)"},"reads":{"mean":381487371.67,"min":71591321,"q1":230783205,"q2":389975089,"q3":536435397,"max":682895705,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (5)","q1Label":"AdapterRemovalV2 (3)","q2Label":"AdapterRemovalV2 (4)","q3Label":"AdapterRemovalV2 (4)"},"cpu":{"mean":277.43,"min":266.3,"q1":267.45,"q2":268.6,"q3":283,"max":297.4,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (5)","q1Label":"AdapterRemovalV2 (3)","q2Label":"AdapterRemovalV2 (4)","q3Label":"AdapterRemovalV2 (4)"},"time":{"mean":68704.67,"min":14668,"q1":53009,"q2":91350,"q3":95723,"max":100096,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (5)","q1Label":"AdapterRemovalV2 (3)","q2Label":"AdapterRemovalV2 (4)","q3Label":"AdapterRemovalV2 (4)"},"writes":{"mean":309637559.33,"min":56127017,"q1":200850794.5,"q2":345574572,"q3":436392830.5,"max":527211089,"minLabel":"AdapterRemovalV2 (3)","maxLabel":"AdapterRemovalV2 (5)","q1Label":"AdapterRemovalV2 (3)","q2Label":"AdapterRemovalV2 (4)","q3Label":"AdapterRemovalV2 (4)"}},{"cpuUsage":null,"process":"runMegahitAssembler","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":{"mean":103986,"min":103986,"q1":103986,"q2":103986,"q3":103986,"max":103986,"minLabel":"runMegahitAssembler (1)","maxLabel":"runMegahitAssembler (1)","q1Label":"runMegahitAssembler (1)","q2Label":"runMegahitAssembler (1)","q3Label":"runMegahitAssembler (1)"},"writes":null}]
+Oct.-03 19:10:30.734 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Oct.-03 19:10:30.743 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
